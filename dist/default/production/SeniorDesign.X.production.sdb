@@ -1,0 +1,240 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1454 ]
+[d frameptr 6 ]
+"4 /Applications/microchip/xc8/v1.33/sources/common/abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 /Applications/microchip/xc8/v1.33/sources/common/abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"33 /Applications/microchip/xc8/v1.33/sources/common/abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 /Applications/microchip/xc8/v1.33/sources/common/almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"42 /Applications/microchip/xc8/v1.33/sources/common/altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 /Applications/microchip/xc8/v1.33/sources/common/attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 /Applications/microchip/xc8/v1.33/sources/common/awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"62 /Applications/microchip/xc8/v1.33/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /Applications/microchip/xc8/v1.33/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 /Applications/microchip/xc8/v1.33/sources/common/ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 /Applications/microchip/xc8/v1.33/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 /Applications/microchip/xc8/v1.33/sources/common/ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"18 /Applications/microchip/xc8/v1.33/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 /Applications/microchip/xc8/v1.33/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 /Applications/microchip/xc8/v1.33/sources/common/lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 /Applications/microchip/xc8/v1.33/sources/common/lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 /Applications/microchip/xc8/v1.33/sources/common/lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"35 /Applications/microchip/xc8/v1.33/sources/common/lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 /Applications/microchip/xc8/v1.33/sources/common/lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 /Applications/microchip/xc8/v1.33/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 /Applications/microchip/xc8/v1.33/sources/common/lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"15 /Applications/microchip/xc8/v1.33/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /Applications/microchip/xc8/v1.33/sources/common/Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 /Applications/microchip/xc8/v1.33/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 /Applications/microchip/xc8/v1.33/sources/common/Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"49 /Applications/microchip/xc8/v1.33/sources/pic/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"40 /Users/mathewleising/MPLABXProjects/SeniorDesign/SeniorDesign.X/main.c
+[v _config config `(v  1 e 0 0 ]
+"107
+[v _main main `(i  1 e 2 0 ]
+"7 /Users/mathewleising/MPLABXProjects/SeniorDesign/SeniorDesign.X/pic16f145x_spi.c
+[v _spi spi `(ui  1 e 2 0 ]
+"19
+[v _spi_setup spi_setup `(v  1 e 0 0 ]
+"4 /Users/mathewleising/MPLABXProjects/SeniorDesign/SeniorDesign.X/pic16f145x_wiznet.c
+[v _wiz_reg_read wiz_reg_read `(ui  1 e 2 0 ]
+"21
+[v _wiz_reg_write wiz_reg_write `(v  1 e 0 0 ]
+"36
+[v _wiz_send wiz_send `(v  1 e 0 0 ]
+"41
+[v _wiz_write wiz_write `(v  1 e 0 0 ]
+"59
+[v _wiz_init wiz_init `(v  1 e 0 0 ]
+[s S164 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"522 /Applications/microchip/xc8/v1.33/include/pic16f1454.h
+[u S173 . 1 `S164 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES173  1 e 1 @17 ]
+[s S64 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"918
+[u S68 . 1 `S64 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES68  1 e 1 @140 ]
+[s S47 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+]
+"947
+[u S54 . 1 `S47 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES54  1 e 1 @142 ]
+[s S19 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 IRCF 1 0 :4:2 
+`uc 1 SPLLMULT 1 0 :1:6 
+`uc 1 SPLLEN 1 0 :1:7 
+]
+"1351
+[s S24 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+`uc 1 IRCF0 1 0 :1:2 
+`uc 1 IRCF1 1 0 :1:3 
+`uc 1 IRCF2 1 0 :1:4 
+`uc 1 IRCF3 1 0 :1:5 
+]
+[u S31 . 1 `S19 1 . 1 0 `S24 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES31  1 e 1 @153 ]
+"1496
+[v _LATCbits LATCbits `VES54  1 e 1 @270 ]
+"2201
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
+"2384
+[v _SSPSTATbits SSPSTATbits `VES173  1 e 1 @532 ]
+[s S213 . 1 `uc 1 SSP1M0 1 0 :1:0 
+`uc 1 SSP1M1 1 0 :1:1 
+`uc 1 SSP1M2 1 0 :1:2 
+`uc 1 SSP1M3 1 0 :1:3 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"2536
+[s S222 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 . 1 0 :1:4 
+`uc 1 SSP1EN 1 0 :1:5 
+`uc 1 SSP1OV 1 0 :1:6 
+]
+[u S227 . 1 `S213 1 . 1 0 `S222 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES227  1 e 1 @533 ]
+"107 /Users/mathewleising/MPLABXProjects/SeniorDesign/SeniorDesign.X/main.c
+[v _main main `(i  1 e 2 0 ]
+{
+[v main@argc argc `i  1 p 2 56 ]
+[v main@argv argv `*.1*.1uc  1 p 2 58 ]
+"119
+} 0
+"40
+[v _config config `(v  1 e 0 0 ]
+{
+"76
+[v config@i i `i  1 a 2 0 ]
+[s S86 wiz_conf_t 48 `[4]ui 1 gateway 8 0 `[6]ui 1 mac 12 8 `[4]ui 1 subnet 8 20 `[4]ui 1 ip 8 28 `[4]ui 1 source_ip 8 36 `[2]ui 1 source_port 4 44 ]
+"74
+[v config@wiz_conf wiz_conf `S86  1 a 48 12 ]
+[s S75 spi_conf_t 10 `ui 1 SSPM_bits 2 0 `ui 1 CKP_bits 2 2 `ui 1 CKE_bits 2 4 `ui 1 SMP_bits 2 6 `ui 1 SSPEN_bits 2 8 ]
+"65
+[v config@spi_conf spi_conf `S75  1 a 10 2 ]
+"105
+} 0
+"59 /Users/mathewleising/MPLABXProjects/SeniorDesign/SeniorDesign.X/pic16f145x_wiznet.c
+[v _wiz_init wiz_init `(v  1 e 0 0 ]
+{
+"91
+[v wiz_init@sock sock `ui  1 a 2 53 ]
+"90
+[v wiz_init@i i `i  1 a 2 51 ]
+[s S86 wiz_conf_t 48 `[4]ui 1 gateway 8 0 `[6]ui 1 mac 12 8 `[4]ui 1 subnet 8 20 `[4]ui 1 ip 8 28 `[4]ui 1 source_ip 8 36 `[2]ui 1 source_port 4 44 ]
+"59
+[v wiz_init@conf conf `S86  1 p 48 2 ]
+"116
+} 0
+"41
+[v _wiz_write wiz_write `(v  1 e 0 0 ]
+{
+"53
+[v wiz_write@i i `i  1 a 2 0 ]
+"41
+[v wiz_write@addr_hi addr_hi `ui  1 p 2 6 ]
+[v wiz_write@addr_lo addr_lo `ui  1 p 2 8 ]
+[v wiz_write@mosi mosi `*.4ui  1 p 1 10 ]
+[v wiz_write@length length `ui  1 p 2 11 ]
+"57
+} 0
+"21
+[v _wiz_reg_write wiz_reg_write `(v  1 e 0 0 ]
+{
+[v wiz_reg_write@addr_hi addr_hi `ui  1 p 2 6 ]
+[v wiz_reg_write@addr_lo addr_lo `ui  1 p 2 8 ]
+[v wiz_reg_write@mosi mosi `ui  1 p 2 10 ]
+"34
+} 0
+"4
+[v _wiz_reg_read wiz_reg_read `(ui  1 e 2 0 ]
+{
+"15
+[v wiz_reg_read@miso miso `ui  1 a 2 10 ]
+"4
+[v wiz_reg_read@addr_hi addr_hi `ui  1 p 2 6 ]
+[v wiz_reg_read@addr_lo addr_lo `ui  1 p 2 8 ]
+"19
+} 0
+"7 /Users/mathewleising/MPLABXProjects/SeniorDesign/SeniorDesign.X/pic16f145x_spi.c
+[v _spi spi `(ui  1 e 2 0 ]
+{
+"9
+[v spi@miso miso `ui  1 a 2 4 ]
+"7
+[v spi@mosi mosi `ui  1 p 2 0 ]
+"16
+} 0
+"19
+[v _spi_setup spi_setup `(v  1 e 0 0 ]
+{
+[s S75 spi_conf_t 10 `ui 1 SSPM_bits 2 0 `ui 1 CKP_bits 2 2 `ui 1 CKE_bits 2 4 `ui 1 SMP_bits 2 6 `ui 1 SSPEN_bits 2 8 ]
+[v spi_setup@conf conf `S75  1 p 10 0 ]
+"35
+} 0

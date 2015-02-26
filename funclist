@@ -1,0 +1,10 @@
+_wiz_init: CODE, 1628 0 416
+_spi: CODE, 1213 0 21
+_wiz_reg_read: CODE, 1327 0 55
+_main: CODE, 1234 0 21
+_wiz_reg_write: CODE, 1282 0 45
+__initialization: CODE, 2044 0 0
+_config: CODE, 1451 0 177
+_spi_setup: CODE, 1255 0 27
+_wiz_write: CODE, 1382 0 69
+Total: 831
