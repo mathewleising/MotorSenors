@@ -10,21 +10,15 @@
 
 #include <xc.h>
 
+#ifdef	__cplusplus
+extern "C" {
+#endif
 
-typedef struct spi_conf_t
-{
-    unsigned int SSPM_bits;
-    unsigned int CKP_bits;
-    unsigned int CKE_bits;
-    unsigned int SMP_bits;
-    unsigned int SSPEN_bits;
-
-} spi_conf_t;
-
-void spi_setup(spi_conf_t conf);
 unsigned int spi(unsigned int mosi);
 
-
+#ifdef	__cplusplus
+}
+#endif
 
 #endif	/* PIC16F145X_SPI_H */
 

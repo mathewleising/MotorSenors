@@ -1,30 +1,61 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"1487 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f1454.h
-[s S83 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S83 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 ]
-"1486
-[u S82 `S83 1 ]
-[n S82 . . ]
-"1496
-[v _LATCbits `VS82 ~T0 @X0 0 e@270 ]
-"17 pic16f145x_spi.h
-[v _spi `(ui ~T0 @X0 0 ef1`ui ]
-[v F1962 `(v ~T0 @X0 1 tf1`ul ]
-"154 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic.h
-[v __delay `JF1962 ~T0 @X0 0 e ]
-[p i __delay ]
-"158 pic16f145x_wiznet.h
-[v _subnet `*Cui ~T0 @X0 -> 0 `x e ]
-"155
-[v _gateway `*Cui ~T0 @X0 -> 0 `x e ]
-"157
-[v _ip `*Cui ~T0 @X0 -> 0 `x e ]
-"156
-[v _mac `*Cui ~T0 @X0 -> 0 `x e ]
-"159
-[v _source_ip `*Cui ~T0 @X0 -> 0 `x e ]
-"160
-[v _source_port `*Cui ~T0 @X0 -> 0 `x e ]
+"1336 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f1454.h
+[s S76 :2 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S76 . SCS IRCF SPLLMULT SPLLEN ]
+"1342
+[s S77 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S77 . SCS0 SCS1 IRCF0 IRCF1 IRCF2 IRCF3 ]
+"1335
+[u S75 `S76 1 `S77 1 ]
+[n S75 . . . ]
+"1351
+[v _OSCCONbits `VS75 ~T0 @X0 0 e@153 ]
+"1273
+[s S73 :7 `uc 1 ]
+[n S73 . TUN ]
+"1276
+[s S74 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S74 . TUN0 TUN1 TUN2 TUN3 TUN4 TUN5 TUN6 ]
+"1272
+[u S72 `S73 1 `S74 1 ]
+[n S72 . . . ]
+"1286
+[v _OSCTUNEbits `VS72 ~T0 @X0 0 e@152 ]
+"938
+[s S59 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S59 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 ]
+"937
+[u S58 `S59 1 ]
+[n S58 . . ]
+"947
+[v _TRISCbits `VS58 ~T0 @X0 0 e@142 ]
+"912
+[s S57 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S57 . . TRISA4 TRISA5 ]
+"911
+[u S56 `S57 1 ]
+[n S56 . . ]
+"918
+[v _TRISAbits `VS56 ~T0 @X0 0 e@140 ]
+"2519
+[s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S148 . SSP1M0 SSP1M1 SSP1M2 SSP1M3 CKP SSPEN SSPOV WCOL ]
+"2529
+[s S149 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S149 . SSPM . SSP1EN SSP1OV ]
+"2518
+[u S147 `S148 1 `S149 1 ]
+[n S147 . . . ]
+"2536
+[v _SSPCONbits `VS147 ~T0 @X0 0 e@533 ]
+"2373
+[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S143 . BF UA R_nW S P D_nA CKE SMP ]
+"2372
+[u S142 `S143 1 ]
+[n S142 . . ]
+"2384
+[v _SSPSTATbits `VS142 ~T0 @X0 0 e@532 ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1454.h: 47: extern volatile unsigned char INDF0 @ 0x000;
@@ -2006,302 +2037,93 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 28: extern void __nop(void);
 [; ;pic.h: 80: extern unsigned int flash_read(unsigned short addr);
 [; ;pic.h: 154: extern __nonreentrant void _delay(unsigned long);
-[; ;pic16f145x_spi.h: 17: unsigned int spi(unsigned int mosi);
-[; ;conf.h: 25: void osc_config(void);
-[; ;conf.h: 26: void port_config(void);
-[; ;conf.h: 27: void spi_config(void);
-[; ;pic16f145x_wiznet.h: 155: extern const unsigned int* gateway[0x04];
-[; ;pic16f145x_wiznet.h: 156: extern const unsigned int* mac[0x06];
-[; ;pic16f145x_wiznet.h: 157: extern const unsigned int* ip[0x04];
-[; ;pic16f145x_wiznet.h: 158: extern const unsigned int* subnet[0x04];
-[; ;pic16f145x_wiznet.h: 159: extern const unsigned int* source_ip[0x04];
-[; ;pic16f145x_wiznet.h: 160: extern const unsigned int* source_port[0x02];
-[; ;pic16f145x_wiznet.h: 162: void wiz_init();
-[; ;pic16f145x_wiznet.h: 163: unsigned int wiz_reg_read(unsigned int addr_hi,unsigned int addr_lo);
-[; ;pic16f145x_wiznet.h: 164: void wiz_reg_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int data);
-[; ;pic16f145x_wiznet.h: 165: void wiz_send(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);
-[; ;pic16f145x_wiznet.h: 166: void wiz_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);
-"3 pic16f145x_wiznet.c
-[v _wiz_reg_read `(ui ~T0 @X0 1 ef2`ui`ui ]
-"4
-{
-[; ;pic16f145x_wiznet.c: 3: unsigned int wiz_reg_read(unsigned int addr_hi,unsigned int addr_lo)
-[; ;pic16f145x_wiznet.c: 4: {
-[e :U _wiz_reg_read ]
-"3
-[v _addr_hi `ui ~T0 @X0 1 r1 ]
-[v _addr_lo `ui ~T0 @X0 1 r2 ]
-"4
-[f ]
-[; ;pic16f145x_wiznet.c: 5: LATCbits.LATC3 = 0;
-"5
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-[; ;pic16f145x_wiznet.c: 7: spi(addr_hi);
-"7
-[e ( _spi (1 _addr_hi ]
-[; ;pic16f145x_wiznet.c: 8: spi(addr_lo);
-"8
-[e ( _spi (1 _addr_lo ]
-[; ;pic16f145x_wiznet.c: 11: spi(0x00);
+"10 conf.c
+[v _osc_config `(v ~T0 @X0 1 ef ]
 "11
-[e ( _spi (1 -> -> 0 `i `ui ]
-[; ;pic16f145x_wiznet.c: 12: spi(0x01);
-"12
-[e ( _spi (1 -> -> 1 `i `ui ]
+{
+[; ;conf.c: 10: void osc_config()
+[; ;conf.c: 11: {
+[e :U _osc_config ]
+[f ]
+[; ;conf.c: 14: OSCCONbits.IRCF = 0x0F;
 "14
-[v _miso `ui ~T0 @X0 1 a ]
-[; ;pic16f145x_wiznet.c: 14: unsigned int miso = spi(0x00);
-[e = _miso ( _spi (1 -> -> 0 `i `ui ]
-[; ;pic16f145x_wiznet.c: 15: LATCbits.LATC3 = 1;
+[e = . . _OSCCONbits 0 1 -> -> 15 `i `uc ]
+[; ;conf.c: 15: OSCCONbits.SCS = 0x00;
 "15
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
-[; ;pic16f145x_wiznet.c: 17: return (miso);
+[e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
+[; ;conf.c: 16: OSCCONbits.SPLLEN = 0x01;
+"16
+[e = . . _OSCCONbits 0 3 -> -> 1 `i `uc ]
+[; ;conf.c: 17: OSCCONbits.SPLLMULT = 0x01;
 "17
-[e ) _miso ]
-[e $UE 255  ]
-[; ;pic16f145x_wiznet.c: 18: }
-"18
+[e = . . _OSCCONbits 0 2 -> -> 1 `i `uc ]
+[; ;conf.c: 19: OSCTUNEbits.TUN = 0xFF;
+"19
+[e = . . _OSCTUNEbits 0 0 -> -> 255 `i `uc ]
+[; ;conf.c: 20: }
+"20
 [e :UE 255 ]
 }
-"20
-[v _wiz_reg_write `(v ~T0 @X0 1 ef3`ui`ui`ui ]
-"21
-{
-[; ;pic16f145x_wiznet.c: 20: void wiz_reg_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int mosi)
-[; ;pic16f145x_wiznet.c: 21: {
-[e :U _wiz_reg_write ]
-"20
-[v _addr_hi `ui ~T0 @X0 1 r1 ]
-[v _addr_lo `ui ~T0 @X0 1 r2 ]
-[v _mosi `ui ~T0 @X0 1 r3 ]
-"21
-[f ]
-[; ;pic16f145x_wiznet.c: 22: LATCbits.LATC3 = 0;
 "22
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-[; ;pic16f145x_wiznet.c: 24: spi(addr_hi);
-"24
-[e ( _spi (1 _addr_hi ]
-[; ;pic16f145x_wiznet.c: 25: spi(addr_lo);
-"25
-[e ( _spi (1 _addr_lo ]
-[; ;pic16f145x_wiznet.c: 28: spi(0x80);
+[v _port_config `(v ~T0 @X0 1 ef ]
+"23
+{
+[; ;conf.c: 22: void port_config()
+[; ;conf.c: 23: {
+[e :U _port_config ]
+[f ]
+[; ;conf.c: 26: TRISCbits.TRISC0 = 0;
+"26
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[; ;conf.c: 27: TRISCbits.TRISC1 = 1;
+"27
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;conf.c: 28: TRISCbits.TRISC2 = 0;
 "28
-[e ( _spi (1 -> -> 128 `i `ui ]
-[; ;pic16f145x_wiznet.c: 29: spi(0x01);
-"29
-[e ( _spi (1 -> -> 1 `i `ui ]
-[; ;pic16f145x_wiznet.c: 31: spi(mosi);
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+[; ;conf.c: 31: TRISCbits.TRISC4 = 0;
 "31
-[e ( _spi (1 _mosi ]
-[; ;pic16f145x_wiznet.c: 32: LATCbits.LATC3 = 1;
+[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
+[; ;conf.c: 32: TRISCbits.TRISC5 = 0;
 "32
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
-[; ;pic16f145x_wiznet.c: 33: }
-"33
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+[; ;conf.c: 35: TRISCbits.TRISC3 = 0;
+"35
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+[; ;conf.c: 36: TRISAbits.TRISA4 = 0;
+"36
+[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+[; ;conf.c: 37: TRISAbits.TRISA5 = 1;
+"37
+[e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
+[; ;conf.c: 38: }
+"38
 [e :UE 256 ]
 }
-"35
-[v _wiz_send `(v ~T0 @X0 1 ef4`ui`ui`*ui`ui ]
-"36
-{
-[; ;pic16f145x_wiznet.c: 35: void wiz_send(unsigned int addr_hi,unsigned int addr_lo, unsigned int * miso, unsigned int length)
-[; ;pic16f145x_wiznet.c: 36: {
-[e :U _wiz_send ]
-"35
-[v _addr_hi `ui ~T0 @X0 1 r1 ]
-[v _addr_lo `ui ~T0 @X0 1 r2 ]
-[v _miso `*ui ~T0 @X0 1 r3 ]
-[v _length `ui ~T0 @X0 1 r4 ]
-"36
-[f ]
-[; ;pic16f145x_wiznet.c: 38: }
-"38
-[e :UE 257 ]
-}
 "40
-[v _wiz_write `(v ~T0 @X0 1 ef4`ui`ui`*ui`ui ]
+[v _spi_config `(v ~T0 @X0 1 ef ]
 "41
 {
-[; ;pic16f145x_wiznet.c: 40: void wiz_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int * mosi, unsigned int length)
-[; ;pic16f145x_wiznet.c: 41: {
-[e :U _wiz_write ]
-"40
-[v _addr_hi `ui ~T0 @X0 1 r1 ]
-[v _addr_lo `ui ~T0 @X0 1 r2 ]
-[v _mosi `*ui ~T0 @X0 1 r3 ]
-[v _length `ui ~T0 @X0 1 r4 ]
-"41
+[; ;conf.c: 40: void spi_config()
+[; ;conf.c: 41: {
+[e :U _spi_config ]
 [f ]
-[; ;pic16f145x_wiznet.c: 42: LATCbits.LATC3 = 0;
-"42
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-[; ;pic16f145x_wiznet.c: 45: spi(addr_hi);
-"45
-[e ( _spi (1 _addr_hi ]
-[; ;pic16f145x_wiznet.c: 46: spi(addr_lo);
-"46
-[e ( _spi (1 _addr_lo ]
-[; ;pic16f145x_wiznet.c: 49: spi(0x80);
-"49
-[e ( _spi (1 -> -> 128 `i `ui ]
-[; ;pic16f145x_wiznet.c: 50: spi(length);
-"50
-[e ( _spi (1 _length ]
-[; ;pic16f145x_wiznet.c: 52: for(int i=0;i<length;i++)
+[; ;conf.c: 51: SSPCONbits.SSPM = 0x00;
+"51
+[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
+[; ;conf.c: 52: SSPCONbits.CKP = 0x00;
 "52
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 262  ]
+[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
+[; ;conf.c: 53: SSPSTATbits.CKE = 0x01;
 "53
-[e :U 259 ]
-[; ;pic16f145x_wiznet.c: 53: spi(mosi[i]);
-[e ( _spi (1 *U + _mosi * -> _i `x -> -> # *U _mosi `i `x ]
-"52
-[e ++ _i -> 1 `i ]
-[e :U 262 ]
-[e $ < -> _i `ui _length 259  ]
-[e :U 260 ]
-"53
-}
-[; ;pic16f145x_wiznet.c: 55: LATCbits.LATC3 = 1;
+[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+[; ;conf.c: 54: SSPSTATbits.SMP = 0x00;
+"54
+[e = . . _SSPSTATbits 0 7 -> -> 0 `i `uc ]
+[; ;conf.c: 55: SSPCONbits.SSPEN = 0x01;
 "55
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
-[; ;pic16f145x_wiznet.c: 56: _delay((unsigned long)((10)*(48000000/4000000.0)));
+[e = . . _SSPCONbits 0 5 -> -> 1 `i `uc ]
+[; ;conf.c: 56: }
 "56
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
-[; ;pic16f145x_wiznet.c: 57: }
-"57
-[e :UE 258 ]
-}
-"59
-[v _wiz_init `(v ~T0 @X0 1 ef ]
-{
-[; ;pic16f145x_wiznet.c: 59: void wiz_init(){
-[e :U _wiz_init ]
-[f ]
-[; ;pic16f145x_wiznet.c: 60: LATCbits.LATC3 = 1;
-"60
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
-[; ;pic16f145x_wiznet.c: 61: _delay((unsigned long)((10)*(48000000/4000000.0)));
-"61
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
-[; ;pic16f145x_wiznet.c: 63: wiz_reg_write(0x00, 0x00, 0x80);
-"63
-[e ( _wiz_reg_write (3 , , -> -> 0 `i `ui -> -> 0 `i `ui -> -> 128 `i `ui ]
-[; ;pic16f145x_wiznet.c: 64: _delay((unsigned long)((100)*(48000000/4000000.0)));
-"64
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
-[; ;pic16f145x_wiznet.c: 65: while (wiz_reg_read(0x00, 0x00) & 0x80)
-"65
-[e $U 264  ]
-[e :U 265 ]
-[; ;pic16f145x_wiznet.c: 66: _delay((unsigned long)((100)*(48000000/4000000.0)));
-"66
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
-[e :U 264 ]
-"65
-[e $ != & ( _wiz_reg_read (2 , -> -> 0 `i `ui -> -> 0 `i `ui -> -> 128 `i `ui -> -> 0 `i `ui 265  ]
-[e :U 266 ]
-[; ;pic16f145x_wiznet.c: 69: wiz_reg_write(0x00, 0x16, 0x00);
-"69
-[e ( _wiz_reg_write (3 , , -> -> 0 `i `ui -> -> 22 `i `ui -> -> 0 `i `ui ]
-[; ;pic16f145x_wiznet.c: 72: wiz_reg_write(0x00, 0x00, 0x00);
-"72
-[e ( _wiz_reg_write (3 , , -> -> 0 `i `ui -> -> 0 `i `ui -> -> 0 `i `ui ]
-[; ;pic16f145x_wiznet.c: 75: wiz_write(0x00, 0x05, subnet, 0x04);
-"75
-[e ( _wiz_write (4 , , , -> -> 0 `i `ui -> -> 5 `i `ui -> &U _subnet `*ui -> -> 4 `i `ui ]
-[; ;pic16f145x_wiznet.c: 78: wiz_write(0x00, 0x01, gateway, 0x04);
-"78
-[e ( _wiz_write (4 , , , -> -> 0 `i `ui -> -> 1 `i `ui -> &U _gateway `*ui -> -> 4 `i `ui ]
-[; ;pic16f145x_wiznet.c: 81: wiz_write(0x00, 0x0F, ip, 0x04);
-"81
-[e ( _wiz_write (4 , , , -> -> 0 `i `ui -> -> 15 `i `ui -> &U _ip `*ui -> -> 4 `i `ui ]
-[; ;pic16f145x_wiznet.c: 84: wiz_write(0x00, 0x09, mac, 0x06);
-"84
-[e ( _wiz_write (4 , , , -> -> 0 `i `ui -> -> 9 `i `ui -> &U _mac `*ui -> -> 6 `i `ui ]
-[; ;pic16f145x_wiznet.c: 89: wiz_reg_write(0x00, 0x35, 0x00);
-"89
-[e ( _wiz_reg_write (3 , , -> -> 0 `i `ui -> -> 53 `i `ui -> -> 0 `i `ui ]
-[; ;pic16f145x_wiznet.c: 90: wiz_reg_write(0x00, 0x36, 0x00);
-"90
-[e ( _wiz_reg_write (3 , , -> -> 0 `i `ui -> -> 54 `i `ui -> -> 0 `i `ui ]
-"92
-[v _i `i ~T0 @X0 1 a ]
-"93
-[v _sock `ui ~T0 @X0 1 a ]
-[; ;pic16f145x_wiznet.c: 92: int i;
-[; ;pic16f145x_wiznet.c: 93: unsigned int sock;
-[; ;pic16f145x_wiznet.c: 95: for (i=0; i < 8; i++) {
-"95
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 267  ]
-[e $U 268  ]
-[e :U 267 ]
-{
-[; ;pic16f145x_wiznet.c: 96: sock = 0x40+i;
-"96
-[e = _sock -> + -> 64 `i _i `ui ]
-[; ;pic16f145x_wiznet.c: 97: wiz_reg_write(sock,0x01, 0x10);
-"97
-[e ( _wiz_reg_write (3 , , _sock -> -> 1 `i `ui -> -> 16 `i `ui ]
-[; ;pic16f145x_wiznet.c: 98: wiz_reg_write(sock,0x00, 0x00);
-"98
-[e ( _wiz_reg_write (3 , , _sock -> -> 0 `i `ui -> -> 0 `i `ui ]
-"99
-}
-"95
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 267  ]
-[e :U 268 ]
-"99
-}
-[; ;pic16f145x_wiznet.c: 99: }
-[; ;pic16f145x_wiznet.c: 102: for (i=0; i < 8; i++) {
-"102
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 270  ]
-[e $U 271  ]
-[e :U 270 ]
-{
-[; ;pic16f145x_wiznet.c: 103: sock = 0x40+i;
-"103
-[e = _sock -> + -> 64 `i _i `ui ]
-[; ;pic16f145x_wiznet.c: 104: wiz_reg_write(sock,0x00, 0x02);
-"104
-[e ( _wiz_reg_write (3 , , _sock -> -> 0 `i `ui -> -> 2 `i `ui ]
-[; ;pic16f145x_wiznet.c: 105: wiz_reg_write(sock,0x04, 0x13);
-"105
-[e ( _wiz_reg_write (3 , , _sock -> -> 4 `i `ui -> -> 19 `i `ui ]
-[; ;pic16f145x_wiznet.c: 106: wiz_reg_write(sock,0x05, (0x81+i));
-"106
-[e ( _wiz_reg_write (3 , , _sock -> -> 5 `i `ui -> + -> 129 `i _i `ui ]
-[; ;pic16f145x_wiznet.c: 108: wiz_write(sock, 0x0C, source_ip, 0x04);
-"108
-[e ( _wiz_write (4 , , , _sock -> -> 12 `i `ui -> &U _source_ip `*ui -> -> 4 `i `ui ]
-[; ;pic16f145x_wiznet.c: 110: wiz_write(sock,0x10, source_port, 0x02);
-"110
-[e ( _wiz_write (4 , , , _sock -> -> 16 `i `ui -> &U _source_port `*ui -> -> 2 `i `ui ]
-[; ;pic16f145x_wiznet.c: 112: wiz_reg_write(sock,0x01, 0x01);
-"112
-[e ( _wiz_reg_write (3 , , _sock -> -> 1 `i `ui -> -> 1 `i `ui ]
-"113
-}
-"102
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 270  ]
-[e :U 271 ]
-"113
-}
-[; ;pic16f145x_wiznet.c: 113: }
-[; ;pic16f145x_wiznet.c: 116: _delay((unsigned long)((100)*(48000000/4000000.0)));
-"116
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
-[; ;pic16f145x_wiznet.c: 118: }
-"118
-[e :UE 263 ]
+[e :UE 257 ]
 }

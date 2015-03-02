@@ -8,6 +8,8 @@
 #ifndef CONF_H
 #define	CONF_H
 
+#include <xc.h>
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
@@ -19,7 +21,11 @@ extern "C" {
 #define WIZ_CS      LATCbits.LATC3	// Write Protect Pin on Serial EEPROM
 #define WIZ_RST     LATAbits.LATA4	// Write Protect Pin on Serial EEPROM
 #define WIZ_INTR    LATAbits.LATA5	// Write Protect Pin on Serial EEPROM
-    
+
+void osc_config(void);
+void port_config(void);
+void spi_config(void);
+
 #ifdef	__cplusplus
 }
 #endif

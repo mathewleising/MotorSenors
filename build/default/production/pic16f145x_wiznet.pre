@@ -1,13 +1,13 @@
 
 # 1 "pic16f145x_wiznet.c"
 
-# 21 "/Applications/microchip/xc8/v1.33/include/htc.h"
+# 21 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 47 "/Applications/microchip/xc8/v1.33/include/pic16f1454.h"
+# 47 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f1454.h"
 extern volatile unsigned char INDF0 @ 0x000;
 
 asm("INDF0 equ 00h");
@@ -2667,7 +2667,7 @@ extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
 extern volatile __bit nWPUEN @ (((unsigned) &OPTION_REG)*8) + 7;
 
 
-# 27 "/Applications/microchip/xc8/v1.33/include/pic.h"
+# 27 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -2679,39 +2679,29 @@ extern unsigned int flash_read(unsigned short addr);
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 14 "pic16f145x_spi.h"
-typedef struct spi_conf_t
-{
-unsigned int SSPM_bits;
-unsigned int CKP_bits;
-unsigned int CKE_bits;
-unsigned int SMP_bits;
-unsigned int SSPEN_bits;
-
-} spi_conf_t;
-
-void spi_setup(spi_conf_t conf);
+# 17 "pic16f145x_spi.h"
 unsigned int spi(unsigned int mosi);
 
+# 25 "conf.h"
+void osc_config(void);
+void port_config(void);
+void spi_config(void);
+
 # 155 "pic16f145x_wiznet.h"
-typedef struct wiz_conf_t
-{
-unsigned int gateway[0x04];
-unsigned int mac[0x06];
-unsigned int subnet[0x04];
-unsigned int ip[0x04];
-unsigned int source_ip[0x04];
-unsigned int source_port[0x02];
+extern const unsigned int* gateway[0x04];
+extern const unsigned int* mac[0x06];
+extern const unsigned int* ip[0x04];
+extern const unsigned int* subnet[0x04];
+extern const unsigned int* source_ip[0x04];
+extern const unsigned int* source_port[0x02];
 
-} wiz_conf_t;
-
-void wiz_init(wiz_conf_t conf);
+void wiz_init();
 unsigned int wiz_reg_read(unsigned int addr_hi,unsigned int addr_lo);
 void wiz_reg_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int data);
 void wiz_send(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);
 void wiz_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);
 
-# 4 "pic16f145x_wiznet.c"
+# 3 "pic16f145x_wiznet.c"
 unsigned int wiz_reg_read(unsigned int addr_hi,unsigned int addr_lo)
 {
 LATCbits.LATC3 = 0;
@@ -2765,9 +2755,12 @@ for(int i=0;i<length;i++)
 spi(mosi[i]);
 
 LATCbits.LATC3 = 1;
+_delay((unsigned long)((10)*(48000000/4000000.0)));
 }
 
-void wiz_init(wiz_conf_t conf){
+void wiz_init(){
+LATCbits.LATC3 = 1;
+_delay((unsigned long)((10)*(48000000/4000000.0)));
 
 wiz_reg_write(0x00, 0x00, 0x80);
 _delay((unsigned long)((100)*(48000000/4000000.0)));
@@ -2781,16 +2774,16 @@ wiz_reg_write(0x00, 0x16, 0x00);
 wiz_reg_write(0x00, 0x00, 0x00);
 
 
-wiz_write(0x00, 0x05, conf.subnet, 0x04);
+wiz_write(0x00, 0x05, subnet, 0x04);
 
 
-wiz_write(0x00, 0x01, conf.gateway, 0x04);
+wiz_write(0x00, 0x01, gateway, 0x04);
 
 
-wiz_write(0x00, 0x0F, conf.ip, 0x04);
+wiz_write(0x00, 0x0F, ip, 0x04);
 
 
-wiz_write(0x00, 0x09, conf.mac, 0x06);
+wiz_write(0x00, 0x09, mac, 0x06);
 
 
 
@@ -2814,9 +2807,9 @@ wiz_reg_write(sock,0x00, 0x02);
 wiz_reg_write(sock,0x04, 0x13);
 wiz_reg_write(sock,0x05, (0x81+i));
 
-wiz_write(sock, 0x0C, conf.source_ip, 0x04);
+wiz_write(sock, 0x0C, source_ip, 0x04);
 
-wiz_write(sock,0x10, conf.source_port, 0x02);
+wiz_write(sock,0x10, source_port, 0x02);
 
 wiz_reg_write(sock,0x01, 0x01);
 }

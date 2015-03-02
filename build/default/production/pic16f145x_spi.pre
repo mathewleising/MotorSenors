@@ -1,13 +1,13 @@
 
 # 1 "pic16f145x_spi.c"
 
-# 21 "/Applications/microchip/xc8/v1.33/include/htc.h"
+# 21 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 47 "/Applications/microchip/xc8/v1.33/include/pic16f1454.h"
+# 47 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f1454.h"
 extern volatile unsigned char INDF0 @ 0x000;
 
 asm("INDF0 equ 00h");
@@ -2667,7 +2667,7 @@ extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
 extern volatile __bit nWPUEN @ (((unsigned) &OPTION_REG)*8) + 7;
 
 
-# 27 "/Applications/microchip/xc8/v1.33/include/pic.h"
+# 27 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -2679,20 +2679,6 @@ extern unsigned int flash_read(unsigned short addr);
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
-# 14 "pic16f145x_spi.h"
-typedef struct spi_conf_t
-{
-unsigned int SSPM_bits;
-unsigned int CKP_bits;
-unsigned int CKE_bits;
-unsigned int SMP_bits;
-unsigned int SSPEN_bits;
-
-} spi_conf_t;
-
-void spi_setup(spi_conf_t conf);
-unsigned int spi(unsigned int mosi);
-
 # 7 "pic16f145x_spi.c"
 unsigned int spi(unsigned int mosi)
 {
@@ -2703,16 +2689,4 @@ SSPBUF = mosi;
 while(!SSPSTATbits.BF);
 miso = SSPBUF;
 return (miso);
-}
-
-
-void spi_setup(spi_conf_t conf)
-{
-
-# 30
-SSPCONbits.SSPM = conf.SSPM_bits;
-SSPCONbits.CKP = conf.CKP_bits;
-SSPSTATbits.CKE = conf.CKE_bits;
-SSPSTATbits.SMP = conf.SMP_bits;
-SSPCONbits.SSPEN = conf.SSPEN_bits;
 }

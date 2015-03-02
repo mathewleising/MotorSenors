@@ -152,18 +152,14 @@
 #define SOCK_REG_RX_READ_POINTER0     0x28
 #define SOCK_REG_RX_READ_POINTER1     0x29
 
-typedef struct wiz_conf_t
-{
-    unsigned int gateway[REG_GATEWAY_IP_LENGTH];
-    unsigned int mac[REG_SOURCE_ADDR_MAC_LENGTH];
-    unsigned int subnet[REG_SUBNET_MASK_IP_LENGTH];
-    unsigned int ip[REG_SOURCE_ADDR_IP_LENGTH];
-    unsigned int source_ip[REG_SOURCE_ADDR_IP_LENGTH];
-    unsigned int source_port[PORT_LENGTH];
-    
-} wiz_conf_t;
+extern const unsigned int* gateway[REG_GATEWAY_IP_LENGTH];
+extern const unsigned int* mac[REG_SOURCE_ADDR_MAC_LENGTH];
+extern const unsigned int* ip[REG_SOURCE_ADDR_IP_LENGTH];
+extern const unsigned int* subnet[REG_SUBNET_MASK_IP_LENGTH];
+extern const unsigned int* source_ip[REG_SOURCE_ADDR_IP_LENGTH];
+extern const unsigned int* source_port[PORT_LENGTH];
 
-void wiz_init(wiz_conf_t conf);
+void wiz_init();
 unsigned int wiz_reg_read(unsigned int  addr_hi,unsigned int  addr_lo);
 void wiz_reg_write(unsigned int  addr_hi,unsigned int  addr_lo, unsigned int data);
 void wiz_send(unsigned int  addr_hi,unsigned int  addr_lo, unsigned int * data, unsigned int length);

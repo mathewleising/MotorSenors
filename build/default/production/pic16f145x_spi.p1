@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"511 /Applications/microchip/xc8/v1.33/include/pic16f1454.h
+"511 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f1454.h
 [s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S34 . TMR1IF TMR2IF . SSP1IF TXIF RCIF . TMR1GIF ]
 "510
@@ -17,24 +17,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S142 . . ]
 "2384
 [v _SSPSTATbits `VS142 ~T0 @X0 0 e@532 ]
-"14 pic16f145x_spi.h
-[s S255 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
-[n S255 spi_conf_t SSPM_bits CKP_bits CKE_bits SMP_bits SSPEN_bits ]
-"2519 /Applications/microchip/xc8/v1.33/include/pic16f1454.h
-[s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S148 . SSP1M0 SSP1M1 SSP1M2 SSP1M3 CKP SSPEN SSPOV WCOL ]
-"2529
-[s S149 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S149 . SSPM . SSP1EN SSP1OV ]
-"2518
-[u S147 `S148 1 `S149 1 ]
-[n S147 . . . ]
-"2536
-[v _SSPCONbits `VS147 ~T0 @X0 0 e@533 ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1454.h: 47: extern volatile unsigned char INDF0 @ 0x000;
-"49 /Applications/microchip/xc8/v1.33/include/pic16f1454.h
+"49 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f1454.h
 [; ;pic16f1454.h: 49: asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
 [; ;pic16f1454.h: 52: typedef union {
@@ -2012,16 +1998,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 28: extern void __nop(void);
 [; ;pic.h: 80: extern unsigned int flash_read(unsigned short addr);
 [; ;pic.h: 154: extern __nonreentrant void _delay(unsigned long);
-[; ;pic16f145x_spi.h: 14: typedef struct spi_conf_t
-[; ;pic16f145x_spi.h: 15: {
-[; ;pic16f145x_spi.h: 16: unsigned int SSPM_bits;
-[; ;pic16f145x_spi.h: 17: unsigned int CKP_bits;
-[; ;pic16f145x_spi.h: 18: unsigned int CKE_bits;
-[; ;pic16f145x_spi.h: 19: unsigned int SMP_bits;
-[; ;pic16f145x_spi.h: 20: unsigned int SSPEN_bits;
-[; ;pic16f145x_spi.h: 22: } spi_conf_t;
-[; ;pic16f145x_spi.h: 24: void spi_setup(spi_conf_t conf);
-[; ;pic16f145x_spi.h: 25: unsigned int spi(unsigned int mosi);
 "7 pic16f145x_spi.c
 [v _spi `(ui ~T0 @X0 1 ef1`ui ]
 "8
@@ -2044,49 +2020,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SSPBUF -> _mosi `uc ]
 [; ;pic16f145x_spi.c: 13: while(!SSPSTATbits.BF);
 "13
-[e $U 257  ]
-[e :U 258 ]
+[e $U 256  ]
 [e :U 257 ]
-[e $ ! != -> . . _SSPSTATbits 0 0 `i -> -> -> 0 `i `Vuc `i 258  ]
-[e :U 259 ]
+[e :U 256 ]
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> -> -> 0 `i `Vuc `i 257  ]
+[e :U 258 ]
 [; ;pic16f145x_spi.c: 14: miso = SSPBUF;
 "14
 [e = _miso -> _SSPBUF `ui ]
 [; ;pic16f145x_spi.c: 15: return (miso);
 "15
 [e ) _miso ]
-[e $UE 256  ]
+[e $UE 255  ]
 [; ;pic16f145x_spi.c: 16: }
 "16
-[e :UE 256 ]
-}
-"19
-[v _spi_setup `(v ~T0 @X0 1 ef1`S255 ]
-"20
-{
-[; ;pic16f145x_spi.c: 19: void spi_setup(spi_conf_t conf)
-[; ;pic16f145x_spi.c: 20: {
-[e :U _spi_setup ]
-"19
-[v _conf `S255 ~T0 @X0 1 r1 ]
-"20
-[f ]
-[; ;pic16f145x_spi.c: 30: SSPCONbits.SSPM = conf.SSPM_bits;
-"30
-[e = . . _SSPCONbits 1 0 -> . _conf 0 `uc ]
-[; ;pic16f145x_spi.c: 31: SSPCONbits.CKP = conf.CKP_bits;
-"31
-[e = . . _SSPCONbits 0 4 -> . _conf 1 `uc ]
-[; ;pic16f145x_spi.c: 32: SSPSTATbits.CKE = conf.CKE_bits;
-"32
-[e = . . _SSPSTATbits 0 6 -> . _conf 2 `uc ]
-[; ;pic16f145x_spi.c: 33: SSPSTATbits.SMP = conf.SMP_bits;
-"33
-[e = . . _SSPSTATbits 0 7 -> . _conf 3 `uc ]
-[; ;pic16f145x_spi.c: 34: SSPCONbits.SSPEN = conf.SSPEN_bits;
-"34
-[e = . . _SSPCONbits 0 5 -> . _conf 4 `uc ]
-[; ;pic16f145x_spi.c: 35: }
-"35
-[e :UE 260 ]
+[e :UE 255 ]
 }
