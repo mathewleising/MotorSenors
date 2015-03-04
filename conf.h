@@ -8,11 +8,11 @@
 #ifndef CONF_H
 #define	CONF_H
 
-#include <xc.h>
-
 #ifdef	__cplusplus
 extern "C" {
 #endif
+
+#include <xc.h>
 
 // Definitions
 #define _XTAL_FREQ  48000000        // this is used by the __delay_ms(xx) and __delay_us(xx) functions

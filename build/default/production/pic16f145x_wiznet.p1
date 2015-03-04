@@ -7,7 +7,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S82 . . ]
 "1498
 [v _LATCbits `VS82 ~T0 @X0 0 e@270 ]
-"17 pic16f145x_spi.h
+"18 pic16f145x_spi.h
 [v _spi `(ui ~T0 @X0 0 ef1`ui ]
 [v F1962 `(v ~T0 @X0 1 tf1`ul ]
 "150 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic.h
@@ -2009,17 +2009,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 184: extern unsigned char __resetbits;
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
-[; ;pic16f145x_spi.h: 17: unsigned int spi(unsigned int mosi);
-[; ;conf.h: 25: void osc_config(void);
-[; ;conf.h: 26: void port_config(void);
-[; ;conf.h: 27: void spi_config(void);
+[; ;pic16f145x_spi.h: 17: void spi_config(void);
+[; ;pic16f145x_spi.h: 18: unsigned int spi(unsigned int mosi);
+[; ;conf.h: 25: void port_config(void);
 [; ;pic16f145x_wiznet.h: 155: extern unsigned int gateway[0x04];
 [; ;pic16f145x_wiznet.h: 156: extern unsigned int mac[0x06];
 [; ;pic16f145x_wiznet.h: 157: extern unsigned int ip[0x04];
 [; ;pic16f145x_wiznet.h: 158: extern unsigned int subnet[0x04];
 [; ;pic16f145x_wiznet.h: 159: extern unsigned int source_ip[0x04];
 [; ;pic16f145x_wiznet.h: 160: extern unsigned int source_port[0x02];
-[; ;pic16f145x_wiznet.h: 162: void wiz_init();
+[; ;pic16f145x_wiznet.h: 162: void wiz_init(void);
 [; ;pic16f145x_wiznet.h: 163: unsigned int wiz_reg_read(unsigned int addr_hi,unsigned int addr_lo);
 [; ;pic16f145x_wiznet.h: 164: void wiz_reg_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int data);
 [; ;pic16f145x_wiznet.h: 165: void wiz_send(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);

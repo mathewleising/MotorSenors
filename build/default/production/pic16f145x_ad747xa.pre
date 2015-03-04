@@ -1,5 +1,5 @@
 
-# 1 "pic16f145x_spi.c"
+# 1 "pic16f145x_ad747xa.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2690,26 +2690,42 @@ extern __bit __timeout;
 void spi_config(void);
 unsigned int spi(unsigned int mosi);
 
-# 4 "pic16f145x_spi.c"
-void spi_config()
-{
+# 25 "conf.h"
+void port_config(void);
 
-# 15
-SSPCONbits.SSPM = 0x00;
-SSPCONbits.CKP = 0x00;
-SSPSTATbits.CKE = 0x01;
-SSPSTATbits.SMP = 0x00;
-SSPCONbits.SSPEN = 0x01;
+# 19 "pic16f145x_ad747xa.h"
+void ad747_init(void);
+unsigned int adc_8(void);
+void adc_12(unsigned int * data);
+
+# 4 "pic16f145x_ad747xa.c"
+void ad747_init()
+{
+LATCbits.LATC5 = 1;
 }
 
-# 26
-unsigned int spi(unsigned int mosi)
+unsigned int adc_8()
 {
-unsigned int miso;
+unsigned int data = 0x00;
 
-PIR1bits.SSP1IF=0;
-SSPBUF = mosi;
-while(!SSPSTATbits.BF);
-miso = SSPBUF;
-return (miso);
+LATCbits.LATC5 = 0;
+
+
+data = spi(0x00)<<4;
+data = data|(spi(0x00)>>4);
+
+LATCbits.LATC5 = 1;
+
+return data;
+}
+
+void adc_12(unsigned int * mosi)
+{
+LATCbits.LATC5 = 0;
+
+
+mosi[0] = spi(0x00);
+mosi[1] = spi(0x00);
+
+LATCbits.LATC5 = 1;
 }

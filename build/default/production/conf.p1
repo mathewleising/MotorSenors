@@ -15,25 +15,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S56 . . ]
 "920
 [v _TRISAbits `VS56 ~T0 @X0 0 e@140 ]
-"2521
-[s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S148 . SSP1M0 SSP1M1 SSP1M2 SSP1M3 CKP SSPEN SSPOV WCOL ]
-"2531
-[s S149 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S149 . SSPM . SSP1EN SSP1OV ]
-"2520
-[u S147 `S148 1 `S149 1 ]
-[n S147 . . . ]
-"2538
-[v _SSPCONbits `VS147 ~T0 @X0 0 e@533 ]
-"2375
-[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S143 . BF UA R_nW S P D_nA CKE SMP ]
-"2374
-[u S142 `S143 1 ]
-[n S142 . . ]
-"2386
-[v _SSPSTATbits `VS142 ~T0 @X0 0 e@532 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1454.h: 49: extern volatile unsigned char INDF0 @ 0x000;
@@ -2018,78 +1999,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 184: extern unsigned char __resetbits;
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
+[; ;conf.h: 25: void port_config(void);
 "10 conf.c
-[v _osc_config `(v ~T0 @X0 1 ef ]
+[v _port_config `(v ~T0 @X0 1 ef ]
 "11
 {
-[; ;conf.c: 10: void osc_config()
+[; ;conf.c: 10: void port_config()
 [; ;conf.c: 11: {
-[e :U _osc_config ]
-[f ]
-[; ;conf.c: 25: }
-"25
-[e :UE 255 ]
-}
-"27
-[v _port_config `(v ~T0 @X0 1 ef ]
-"28
-{
-[; ;conf.c: 27: void port_config()
-[; ;conf.c: 28: {
 [e :U _port_config ]
 [f ]
-[; ;conf.c: 31: TRISCbits.TRISC0 = 0;
-"31
+[; ;conf.c: 14: TRISCbits.TRISC0 = 0;
+"14
 [e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-[; ;conf.c: 32: TRISCbits.TRISC1 = 1;
-"32
+[; ;conf.c: 15: TRISCbits.TRISC1 = 1;
+"15
 [e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
-[; ;conf.c: 33: TRISCbits.TRISC2 = 0;
-"33
+[; ;conf.c: 16: TRISCbits.TRISC2 = 0;
+"16
 [e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-[; ;conf.c: 36: TRISCbits.TRISC4 = 0;
-"36
+[; ;conf.c: 19: TRISCbits.TRISC4 = 0;
+"19
 [e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
-[; ;conf.c: 37: TRISCbits.TRISC5 = 0;
-"37
+[; ;conf.c: 20: TRISCbits.TRISC5 = 0;
+"20
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-[; ;conf.c: 40: TRISCbits.TRISC3 = 0;
-"40
+[; ;conf.c: 23: TRISCbits.TRISC3 = 0;
+"23
 [e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
-[; ;conf.c: 41: TRISAbits.TRISA4 = 0;
-"41
+[; ;conf.c: 24: TRISAbits.TRISA4 = 0;
+"24
 [e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
-[; ;conf.c: 42: TRISAbits.TRISA5 = 1;
-"42
+[; ;conf.c: 25: TRISAbits.TRISA5 = 1;
+"25
 [e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
-[; ;conf.c: 43: }
-"43
-[e :UE 256 ]
-}
-"45
-[v _spi_config `(v ~T0 @X0 1 ef ]
-"46
-{
-[; ;conf.c: 45: void spi_config()
-[; ;conf.c: 46: {
-[e :U _spi_config ]
-[f ]
-[; ;conf.c: 56: SSPCONbits.SSPM = 0x00;
-"56
-[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
-[; ;conf.c: 57: SSPCONbits.CKP = 0x00;
-"57
-[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
-[; ;conf.c: 58: SSPSTATbits.CKE = 0x01;
-"58
-[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
-[; ;conf.c: 59: SSPSTATbits.SMP = 0x00;
-"59
-[e = . . _SSPSTATbits 0 7 -> -> 0 `i `uc ]
-[; ;conf.c: 60: SSPCONbits.SSPEN = 0x01;
-"60
-[e = . . _SSPCONbits 0 5 -> -> 1 `i `uc ]
-[; ;conf.c: 61: }
-"61
-[e :UE 257 ]
+[; ;conf.c: 26: }
+"26
+[e :UE 255 ]
 }

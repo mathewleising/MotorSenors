@@ -2822,12 +2822,16 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 extern char * ftoa(float f, int * status);
 
 # 17 "pic16f145x_spi.h"
+void spi_config(void);
 unsigned int spi(unsigned int mosi);
 
 # 25 "conf.h"
-void osc_config(void);
 void port_config(void);
-void spi_config(void);
+
+# 19 "pic16f145x_ad747xa.h"
+void ad747_init(void);
+unsigned int adc_8(void);
+void adc_12(unsigned int * data);
 
 # 155 "pic16f145x_wiznet.h"
 extern unsigned int gateway[0x04];
@@ -2837,14 +2841,14 @@ extern unsigned int subnet[0x04];
 extern unsigned int source_ip[0x04];
 extern unsigned int source_port[0x02];
 
-void wiz_init();
+void wiz_init(void);
 unsigned int wiz_reg_read(unsigned int addr_hi,unsigned int addr_lo);
 void wiz_reg_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int data);
 void wiz_send(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);
 void wiz_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);
 
 
-# 18 "main.c"
+# 19 "main.c"
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2866,7 +2870,6 @@ void wiz_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, u
 #pragma config LPBOR = OFF
 #pragma config LVP = OFF
 
-
 unsigned int gateway[0x04] = {0x00,0x00,0x00,0x00};
 unsigned int mac[0x06] = {0x54,0x52,0x00,0x00,0xF8,0x01};
 unsigned int ip[0x04] = {0xA9,0x80,0x80,0x82};
@@ -2876,11 +2879,11 @@ unsigned int source_port[0x02] = {0x13,0x88};
 
 void config()
 {
-osc_config();
-
 port_config();
 
 spi_config();
+
+ad747_init();
 
 wiz_init();
 }

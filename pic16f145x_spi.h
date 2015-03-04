@@ -8,11 +8,11 @@
 #ifndef PIC16F145X_SPI_H
 #define	PIC16F145X_SPI_H
 
-#include <xc.h>
-
 #ifdef	__cplusplus
 extern "C" {
 #endif
+
+#include <xc.h>
 
 void spi_config(void);
 unsigned int spi(unsigned int mosi);

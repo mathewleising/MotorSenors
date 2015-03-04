@@ -2687,12 +2687,11 @@ extern __bit __powerdown;
 extern __bit __timeout;
 
 # 17 "pic16f145x_spi.h"
+void spi_config(void);
 unsigned int spi(unsigned int mosi);
 
 # 25 "conf.h"
-void osc_config(void);
 void port_config(void);
-void spi_config(void);
 
 # 155 "pic16f145x_wiznet.h"
 extern unsigned int gateway[0x04];
@@ -2702,7 +2701,7 @@ extern unsigned int subnet[0x04];
 extern unsigned int source_ip[0x04];
 extern unsigned int source_port[0x02];
 
-void wiz_init();
+void wiz_init(void);
 unsigned int wiz_reg_read(unsigned int addr_hi,unsigned int addr_lo);
 void wiz_reg_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int data);
 void wiz_send(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);

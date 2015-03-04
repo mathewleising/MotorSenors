@@ -8,13 +8,13 @@
 #ifndef PIC16F145X_WIZNET_H
 #define	PIC16F145X_WIZNET_H
 
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
 #include <xc.h>
 #include "pic16f145x_spi.h"
 #include "conf.h"
-
-//#ifdef	__cplusplus
-//extern "C" {
-//#endif
 
 #define MAX_SOCK_NUM 8
 
@@ -159,15 +159,15 @@ extern unsigned int subnet[REG_SUBNET_MASK_IP_LENGTH];
 extern unsigned int source_ip[REG_SOURCE_ADDR_IP_LENGTH];
 extern unsigned int source_port[PORT_LENGTH];
 
-void wiz_init();
+void wiz_init(void);
 unsigned int wiz_reg_read(unsigned int  addr_hi,unsigned int  addr_lo);
 void wiz_reg_write(unsigned int  addr_hi,unsigned int  addr_lo, unsigned int data);
 void wiz_send(unsigned int  addr_hi,unsigned int  addr_lo, unsigned int * data, unsigned int length);
 void wiz_write(unsigned int  addr_hi,unsigned int  addr_lo, unsigned int *  data, unsigned int length);
 
-//#ifdef	__cplusplus
-//}
-//#endif
+#ifdef	__cplusplus
+}
+#endif
 
 #endif	/* PIC16F145X_WIZNET_H */
 

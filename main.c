@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "pic16f145x_spi.h"
+#include "pic16f145x_ad747xa.h"
 #include "pic16f145x_wiznet.h"
 #include "conf.h"
 
@@ -48,6 +49,8 @@ void config()
     port_config();
 
     spi_config();
+
+    ad747_init();
 
     wiz_init();
 }

@@ -1,14 +1,14 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "25 conf.h
-[v _osc_config `(v ~T0 @X0 0 ef ]
-"26
 [v _port_config `(v ~T0 @X0 0 ef ]
-"27
+"17 pic16f145x_spi.h
 [v _spi_config `(v ~T0 @X0 0 ef ]
+"19 pic16f145x_ad747xa.h
+[v _ad747_init `(v ~T0 @X0 0 ef ]
 "162 pic16f145x_wiznet.h
 [v _wiz_init `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"17 pic16f145x_spi.h
+"18 pic16f145x_spi.h
 [v _spi `(ui ~T0 @X0 0 ef1`ui ]
 "1407 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1454.h
 [v _OSCSTAT `Vuc ~T0 @X0 0 e@154 ]
@@ -2082,56 +2082,58 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-[; ;pic16f145x_spi.h: 17: unsigned int spi(unsigned int mosi);
-[; ;conf.h: 25: void osc_config(void);
-[; ;conf.h: 26: void port_config(void);
-[; ;conf.h: 27: void spi_config(void);
+[; ;pic16f145x_spi.h: 17: void spi_config(void);
+[; ;pic16f145x_spi.h: 18: unsigned int spi(unsigned int mosi);
+[; ;conf.h: 25: void port_config(void);
+[; ;pic16f145x_ad747xa.h: 19: void ad747_init(void);
+[; ;pic16f145x_ad747xa.h: 20: unsigned int adc_8(void);
+[; ;pic16f145x_ad747xa.h: 21: void adc_12(unsigned int * data);
 [; ;pic16f145x_wiznet.h: 155: extern unsigned int gateway[0x04];
 [; ;pic16f145x_wiznet.h: 156: extern unsigned int mac[0x06];
 [; ;pic16f145x_wiznet.h: 157: extern unsigned int ip[0x04];
 [; ;pic16f145x_wiznet.h: 158: extern unsigned int subnet[0x04];
 [; ;pic16f145x_wiznet.h: 159: extern unsigned int source_ip[0x04];
 [; ;pic16f145x_wiznet.h: 160: extern unsigned int source_port[0x02];
-[; ;pic16f145x_wiznet.h: 162: void wiz_init();
+[; ;pic16f145x_wiznet.h: 162: void wiz_init(void);
 [; ;pic16f145x_wiznet.h: 163: unsigned int wiz_reg_read(unsigned int addr_hi,unsigned int addr_lo);
 [; ;pic16f145x_wiznet.h: 164: void wiz_reg_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int data);
 [; ;pic16f145x_wiznet.h: 165: void wiz_send(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);
 [; ;pic16f145x_wiznet.h: 166: void wiz_write(unsigned int addr_hi,unsigned int addr_lo, unsigned int * data, unsigned int length);
-"18 main.c
+"19 main.c
 [p x FOSC=HS ]
-"19
-[p x WDTE=OFF ]
 "20
-[p x PWRTE=OFF ]
+[p x WDTE=OFF ]
 "21
-[p x MCLRE=OFF ]
+[p x PWRTE=OFF ]
 "22
-[p x CP=OFF ]
+[p x MCLRE=OFF ]
 "23
-[p x BOREN=OFF ]
+[p x CP=OFF ]
 "24
-[p x CLKOUTEN=OFF ]
+[p x BOREN=OFF ]
 "25
-[p x IESO=OFF ]
+[p x CLKOUTEN=OFF ]
 "26
+[p x IESO=OFF ]
+"27
 [p x FCMEN=OFF ]
-"29
-[p x WRT=OFF ]
 "30
-[p x CPUDIV=NOCLKDIV ]
+[p x WRT=OFF ]
 "31
-[p x USBLSCLK=48MHz ]
+[p x CPUDIV=NOCLKDIV ]
 "32
-[p x PLLMULT=3x ]
+[p x USBLSCLK=48MHz ]
 "33
-[p x PLLEN=ENABLED ]
+[p x PLLMULT=3x ]
 "34
-[p x STVREN=ON ]
+[p x PLLEN=ENABLED ]
 "35
-[p x BORV=LO ]
+[p x STVREN=ON ]
 "36
-[p x LPBOR=OFF ]
+[p x BORV=LO ]
 "37
+[p x LPBOR=OFF ]
+"38
 [p x LVP=OFF ]
 "40
 [v _gateway `ui ~T0 @X0 -> 4 `i e ]
@@ -2207,15 +2209,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 48: {
 [e :U _config ]
 [f ]
-[; ;main.c: 49: osc_config();
+[; ;main.c: 49: port_config();
 "49
-[e ( _osc_config ..  ]
-[; ;main.c: 51: port_config();
-"51
 [e ( _port_config ..  ]
-[; ;main.c: 53: spi_config();
-"53
+[; ;main.c: 51: spi_config();
+"51
 [e ( _spi_config ..  ]
+[; ;main.c: 53: ad747_init();
+"53
+[e ( _ad747_init ..  ]
 [; ;main.c: 55: wiz_init();
 "55
 [e ( _wiz_init ..  ]

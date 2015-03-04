@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\SeniorDesign.X.production.sym \
   --cmf=dist/default/production\SeniorDesign.X.production.cmf -z -Q16F1454 \
-  -oC:\Users\MTLEIS~1\AppData\Local\Temp\s4b0.6 \
+  -oC:\Users\MTLEIS~1\AppData\Local\Temp\s5i4.6 \
   -Mdist/default/production/SeniorDesign.X.production.map -E1 -ver=XC8 \
   -ASTACK=0203Dh-023efh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -31,7 +31,7 @@ Linker command line:
   -pcinit=CODE -pfunctab=CODE -ACONFIG=08007h-08008h -pconfig=CONFIG \
   -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\MTLEIS~1\AppData\Local\Temp\s4b0.obj \
+  C:\Users\MTLEIS~1\AppData\Local\Temp\s5i4.obj \
   dist/default/production\SeniorDesign.X.production.obj 
 
 Object code version is 3.11
@@ -41,13 +41,13 @@ Machine type is 16F1454
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\MTLEIS~1\AppData\Local\Temp\s4b0.obj
+C:\Users\MTLEIS~1\AppData\Local\Temp\s5i4.obj
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production\SeniorDesign.X.production.obj
                 cinit                               7EA      7EA       16      FD4       0
-                text9                               552      552        1      AA4       0
+                text9                               550      550        3      AA0       0
                 text8                               561      561        A      AC2       0
                 text7                               559      559        8      AB2       0
                 text6                               577      577       13      AEE       0
@@ -71,7 +71,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                              2        2        2         0
                 cinit                               7EA      7EA       16         0
                 reset_vec                             0        0        2         0
-                text9                               552      552        1         0
+                text9                               550      550        3         0
                 text8                               561      561        A         0
                 text7                               559      559        8         0
                 text6                               577      577       13         0
@@ -247,7 +247,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE        2
                 dataBANK0                      000020  00003D  00005D        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
-                text9                          000552  000001  000553       AA4       0  CODE        2
+                text9                          000550  000003  000553       AA0       0  CODE        2
                 inittext                       000553  000006  000559       AA6       0  CODE        2
                 text7                          000559  000008  000561       AB2       0  CODE        2
                 text8                          000561  00000A  00056B       AC2       0  CODE        2
@@ -280,11 +280,11 @@ UNUSED ADDRESS RANGES
         BANK8            00420-0046F              50           1
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-023EF             3F0           1
-        CODE             00004-00551             54E           2
+        CODE             00004-0054F             54C           2
                          00800-01FFF             800
-        CONST            00004-00551             100           2
+        CONST            00004-0054F             100           2
                          00800-01FFF             100
-        ENTRY            00004-00551             100           2
+        ENTRY            00004-0054F             100           2
                          00800-01FFF             100
         IDLOC            08000-08003               4           2
         RAM              0005D-0006F              13           1
@@ -333,9 +333,9 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
         STACK            0203D-023EF             3B3           1
-        STRCODE          00004-00551             54E           2
+        STRCODE          00004-0054F             54C           2
                          00800-01FFF            1800
-        STRING           00004-00551             100           2
+        STRING           00004-0054F             100           2
                          00800-01FFF             100
 
                                   Symbol Table
@@ -563,9 +563,9 @@ ___int_sp                stack        00000
 ___latbits               (abs)        00002
 ___sp                    stack        00000
 __end_of__initialization cinit        007FD
+__end_of_ad747_init      text9        00553
 __end_of_config          text1        00577
 __end_of_main            maintext     005A6
-__end_of_osc_config      text9        00553
 __end_of_port_config     text8        0056B
 __end_of_spi             text6        0058A
 __end_of_spi_config      text7        00561
@@ -588,10 +588,10 @@ __ptext5                 text5        005F5
 __ptext6                 text6        00577
 __ptext7                 text7        00559
 __ptext8                 text8        00561
-__ptext9                 text9        00552
+__ptext9                 text9        00550
+__size_of_ad747_init     (abs)        00000
 __size_of_config         (abs)        00000
 __size_of_main           (abs)        00000
-__size_of_osc_config     (abs)        00000
 __size_of_port_config    (abs)        00000
 __size_of_spi            (abs)        00000
 __size_of_spi_config     (abs)        00000
@@ -599,12 +599,12 @@ __size_of_wiz_init       (abs)        00000
 __size_of_wiz_reg_read   (abs)        00000
 __size_of_wiz_reg_write  (abs)        00000
 __size_of_wiz_write      (abs)        00000
+_ad747_init              text9        00550
 _config                  text1        0056B
 _gateway                 bssBANK0     00055
 _ip                      dataBANK0    0002C
 _mac                     dataBANK0    00020
 _main                    maintext     0058A
-_osc_config              text9        00552
 _port_config             text8        00561
 _source_ip               dataBANK0    00034
 _source_port             dataBANK0    00044
@@ -722,7 +722,7 @@ Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
  This function calls:
-		_osc_config
+		_ad747_init
 		_port_config
 		_spi_config
 		_wiz_init
@@ -864,7 +864,7 @@ Total ram usage:        6 bytes
 
  *************** function _spi *****************
  Defined at:
-		line 7 in file "pic16f145x_spi.c"
+		line 26 in file "pic16f145x_spi.c"
  Parameters:    Size  Location     Type
   mosi            2    0[COMMON] unsigned int 
  Auto vars:     Size  Location     Type
@@ -891,12 +891,14 @@ Total ram usage:        6 bytes
 		_wiz_reg_read
 		_wiz_reg_write
 		_wiz_write
+		_adc_8
+		_adc_12
  This function uses a non-reentrant model
 
 
  *************** function _spi_config *****************
  Defined at:
-		line 45 in file "conf.c"
+		line 4 in file "pic16f145x_spi.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -925,7 +927,7 @@ Total ram usage:        0 bytes
 
  *************** function _port_config *****************
  Defined at:
-		line 27 in file "conf.c"
+		line 10 in file "conf.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -952,9 +954,9 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _osc_config *****************
+ *************** function _ad747_init *****************
  Defined at:
-		line 10 in file "conf.c"
+		line 4 in file "pic16f145x_ad747xa.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -986,16 +988,15 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 conf.c
-		_osc_config    		CODE           	0552	0000	2
-		_spi_config    		CODE           	0559	0000	9
 		_port_config   		CODE           	0561	0000	11
 
-conf.c estimated size: 22
+conf.c estimated size: 11
 
 pic16f145x_spi.c
 		_spi           		CODE           	0577	0000	20
+		_spi_config    		CODE           	0559	0000	9
 
-pic16f145x_spi.c estimated size: 20
+pic16f145x_spi.c estimated size: 29
 
 pic16f145x_wiznet.c
 		_wiz_init      		CODE           	0666	0000	389
@@ -1009,6 +1010,11 @@ shared
 		__initializatio		CODE           	07EA	0000	20
 
 shared estimated size: 20
+
+pic16f145x_ad747xa.c
+		_ad747_init    		CODE           	0550	0000	4
+
+pic16f145x_ad747xa.c estimated size: 4
 
 main.c
 		_main          		CODE           	058A	0000	29

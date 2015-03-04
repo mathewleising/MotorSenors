@@ -1,33 +1,14 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2521 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1454.h
-[s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S148 . SSP1M0 SSP1M1 SSP1M2 SSP1M3 CKP SSPEN SSPOV WCOL ]
-"2531
-[s S149 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S149 . SSPM . SSP1EN SSP1OV ]
-"2520
-[u S147 `S148 1 `S149 1 ]
-[n S147 . . . ]
-"2538
-[v _SSPCONbits `VS147 ~T0 @X0 0 e@533 ]
-"2375
-[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S143 . BF UA R_nW S P D_nA CKE SMP ]
-"2374
-[u S142 `S143 1 ]
-[n S142 . . ]
-"2386
-[v _SSPSTATbits `VS142 ~T0 @X0 0 e@532 ]
-"513
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . TMR1IF TMR2IF . SSP1IF TXIF RCIF . TMR1GIF ]
-"512
-[u S33 `S34 1 ]
-[n S33 . . ]
-"524
-[v _PIR1bits `VS33 ~T0 @X0 0 e@17 ]
-"2203
-[v _SSPBUF `Vuc ~T0 @X0 0 e@529 ]
+"1489 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1454.h
+[s S83 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S83 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 ]
+"1488
+[u S82 `S83 1 ]
+[n S82 . . ]
+"1498
+[v _LATCbits `VS82 ~T0 @X0 0 e@270 ]
+"18 pic16f145x_spi.h
+[v _spi `(ui ~T0 @X0 0 ef1`ui ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1454.h: 49: extern volatile unsigned char INDF0 @ 0x000;
@@ -2014,68 +1995,81 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern __bit __timeout;
 [; ;pic16f145x_spi.h: 17: void spi_config(void);
 [; ;pic16f145x_spi.h: 18: unsigned int spi(unsigned int mosi);
-"4 pic16f145x_spi.c
-[v _spi_config `(v ~T0 @X0 1 ef ]
+[; ;conf.h: 25: void port_config(void);
+[; ;pic16f145x_ad747xa.h: 19: void ad747_init(void);
+[; ;pic16f145x_ad747xa.h: 20: unsigned int adc_8(void);
+[; ;pic16f145x_ad747xa.h: 21: void adc_12(unsigned int * data);
+"4 pic16f145x_ad747xa.c
+[v _ad747_init `(v ~T0 @X0 1 ef ]
 "5
 {
-[; ;pic16f145x_spi.c: 4: void spi_config()
-[; ;pic16f145x_spi.c: 5: {
-[e :U _spi_config ]
+[; ;pic16f145x_ad747xa.c: 4: void ad747_init()
+[; ;pic16f145x_ad747xa.c: 5: {
+[e :U _ad747_init ]
 [f ]
-[; ;pic16f145x_spi.c: 15: SSPCONbits.SSPM = 0x00;
-"15
-[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
-[; ;pic16f145x_spi.c: 16: SSPCONbits.CKP = 0x00;
-"16
-[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
-[; ;pic16f145x_spi.c: 17: SSPSTATbits.CKE = 0x01;
-"17
-[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
-[; ;pic16f145x_spi.c: 18: SSPSTATbits.SMP = 0x00;
-"18
-[e = . . _SSPSTATbits 0 7 -> -> 0 `i `uc ]
-[; ;pic16f145x_spi.c: 19: SSPCONbits.SSPEN = 0x01;
-"19
-[e = . . _SSPCONbits 0 5 -> -> 1 `i `uc ]
-[; ;pic16f145x_spi.c: 20: }
-"20
+[; ;pic16f145x_ad747xa.c: 6: LATCbits.LATC5 = 1;
+"6
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 7: }
+"7
 [e :UE 255 ]
 }
-"26
-[v _spi `(ui ~T0 @X0 1 ef1`ui ]
-"27
+"9
+[v _adc_8 `(ui ~T0 @X0 1 ef ]
+"10
 {
-[; ;pic16f145x_spi.c: 26: unsigned int spi(unsigned int mosi)
-[; ;pic16f145x_spi.c: 27: {
-[e :U _spi ]
-"26
-[v _mosi `ui ~T0 @X0 1 r1 ]
-"27
+[; ;pic16f145x_ad747xa.c: 9: unsigned int adc_8()
+[; ;pic16f145x_ad747xa.c: 10: {
+[e :U _adc_8 ]
 [f ]
-"28
-[v _miso `ui ~T0 @X0 1 a ]
-[; ;pic16f145x_spi.c: 28: unsigned int miso;
-[; ;pic16f145x_spi.c: 30: PIR1bits.SSP1IF=0;
-"30
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;pic16f145x_spi.c: 31: SSPBUF = mosi;
-"31
-[e = _SSPBUF -> _mosi `uc ]
-[; ;pic16f145x_spi.c: 32: while(!SSPSTATbits.BF);
-"32
-[e $U 257  ]
-[e :U 258 ]
-[e :U 257 ]
-[e $ ! != -> . . _SSPSTATbits 0 0 `i -> -> -> 0 `i `Vuc `i 258  ]
-[e :U 259 ]
-[; ;pic16f145x_spi.c: 33: miso = SSPBUF;
-"33
-[e = _miso -> _SSPBUF `ui ]
-[; ;pic16f145x_spi.c: 34: return (miso);
-"34
-[e ) _miso ]
+"11
+[v _data `ui ~T0 @X0 1 a ]
+[; ;pic16f145x_ad747xa.c: 11: unsigned int data = 0x00;
+[e = _data -> -> 0 `i `ui ]
+[; ;pic16f145x_ad747xa.c: 13: LATCbits.LATC5 = 0;
+"13
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 16: data = spi(0x00)<<4;
+"16
+[e = _data << ( _spi (1 -> -> 0 `i `ui -> 4 `i ]
+[; ;pic16f145x_ad747xa.c: 17: data = data|(spi(0x00)>>4);
+"17
+[e = _data | _data >> ( _spi (1 -> -> 0 `i `ui -> 4 `i ]
+[; ;pic16f145x_ad747xa.c: 19: LATCbits.LATC5 = 1;
+"19
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 21: return data;
+"21
+[e ) _data ]
 [e $UE 256  ]
-[; ;pic16f145x_spi.c: 35: }
-"35
+[; ;pic16f145x_ad747xa.c: 22: }
+"22
 [e :UE 256 ]
+}
+"24
+[v _adc_12 `(v ~T0 @X0 1 ef1`*ui ]
+"25
+{
+[; ;pic16f145x_ad747xa.c: 24: void adc_12(unsigned int * mosi)
+[; ;pic16f145x_ad747xa.c: 25: {
+[e :U _adc_12 ]
+"24
+[v _mosi `*ui ~T0 @X0 1 r1 ]
+"25
+[f ]
+[; ;pic16f145x_ad747xa.c: 26: LATCbits.LATC5 = 0;
+"26
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 29: mosi[0] = spi(0x00);
+"29
+[e = *U + _mosi * -> -> 0 `i `x -> -> # *U _mosi `i `x ( _spi (1 -> -> 0 `i `ui ]
+[; ;pic16f145x_ad747xa.c: 30: mosi[1] = spi(0x00);
+"30
+[e = *U + _mosi * -> -> 1 `i `x -> -> # *U _mosi `i `x ( _spi (1 -> -> 0 `i `ui ]
+[; ;pic16f145x_ad747xa.c: 32: LATCbits.LATC5 = 1;
+"32
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 33: }
+"33
+[e :UE 257 ]
 }

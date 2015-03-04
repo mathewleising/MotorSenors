@@ -2686,13 +2686,10 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
+# 25 "conf.h"
+void port_config(void);
+
 # 10 "conf.c"
-void osc_config()
-{
-
-# 25
-}
-
 void port_config()
 {
 
@@ -2710,15 +2707,3 @@ TRISCbits.TRISC3 = 0;
 TRISAbits.TRISA4 = 0;
 TRISAbits.TRISA5 = 1;
 }
-
-void spi_config()
-{
-
-# 56
-SSPCONbits.SSPM = 0x00;
-SSPCONbits.CKP = 0x00;
-SSPSTATbits.CKE = 0x01;
-SSPSTATbits.SMP = 0x00;
-SSPCONbits.SSPEN = 0x01;
-}
-
