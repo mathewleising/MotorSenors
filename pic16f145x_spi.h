@@ -14,6 +14,7 @@
 extern "C" {
 #endif
 
+void spi_config(void);
 unsigned int spi(unsigned int mosi);
 
 #ifdef	__cplusplus

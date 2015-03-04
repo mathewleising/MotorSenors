@@ -22,9 +22,7 @@ extern "C" {
 #define WIZ_RST     LATAbits.LATA4	// Write Protect Pin on Serial EEPROM
 #define WIZ_INTR    LATAbits.LATA5	// Write Protect Pin on Serial EEPROM
 
-void osc_config(void);
 void port_config(void);
-void spi_config(void);
 
 #ifdef	__cplusplus
 }

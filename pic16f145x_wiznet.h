@@ -152,12 +152,12 @@
 #define SOCK_REG_RX_READ_POINTER0     0x28
 #define SOCK_REG_RX_READ_POINTER1     0x29
 
-extern const unsigned int* gateway[REG_GATEWAY_IP_LENGTH];
-extern const unsigned int* mac[REG_SOURCE_ADDR_MAC_LENGTH];
-extern const unsigned int* ip[REG_SOURCE_ADDR_IP_LENGTH];
-extern const unsigned int* subnet[REG_SUBNET_MASK_IP_LENGTH];
-extern const unsigned int* source_ip[REG_SOURCE_ADDR_IP_LENGTH];
-extern const unsigned int* source_port[PORT_LENGTH];
+extern unsigned int gateway[REG_GATEWAY_IP_LENGTH];
+extern unsigned int mac[REG_SOURCE_ADDR_MAC_LENGTH];
+extern unsigned int ip[REG_SOURCE_ADDR_IP_LENGTH];
+extern unsigned int subnet[REG_SUBNET_MASK_IP_LENGTH];
+extern unsigned int source_ip[REG_SOURCE_ADDR_IP_LENGTH];
+extern unsigned int source_port[PORT_LENGTH];
 
 void wiz_init();
 unsigned int wiz_reg_read(unsigned int  addr_hi,unsigned int  addr_lo);
