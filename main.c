@@ -59,6 +59,9 @@ int main(int argc, char** argv)
 {
     config();
 
+    unsigned int cur_data = 0x00;
+    unsigned int vib_data[2] = { 0x00, 0x00 };
+
     while (1) {
         spi(OSCSTAT);
         __delay_us(10);
