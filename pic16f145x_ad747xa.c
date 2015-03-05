@@ -7,7 +7,7 @@ void ad747_init()
     VIB_CS = 1;
 }
 
-unsigned int adc_8()
+unsigned int adc_8(void)
 {
     unsigned int data = 0x00;
 

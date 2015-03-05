@@ -2701,20 +2701,21 @@ void adc_12(unsigned int * data);
 # 4 "pic16f145x_ad747xa.c"
 void ad747_init()
 {
+LATCbits.LATC4 = 1;
 LATCbits.LATC5 = 1;
 }
 
-unsigned int adc_8()
+unsigned int adc_8(void)
 {
 unsigned int data = 0x00;
 
-LATCbits.LATC5 = 0;
+LATCbits.LATC4 = 0;
 
 
 data = spi(0x00)<<4;
 data = data|(spi(0x00)>>4);
 
-LATCbits.LATC5 = 1;
+LATCbits.LATC4 = 1;
 
 return data;
 }

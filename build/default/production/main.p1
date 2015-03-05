@@ -7,15 +7,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ad747_init `(v ~T0 @X0 0 ef ]
 "162 pic16f145x_wiznet.h
 [v _wiz_init `(v ~T0 @X0 0 ef ]
+"1073 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1454.h
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
+"343
+[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S27 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"353
+[s S28 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S28 . . T0IF . T0IE ]
+"342
+[u S26 `S27 1 `S28 1 ]
+[n S26 . . . ]
+"360
+[v _INTCONbits `VS26 ~T0 @X0 0 e@11 ]
 [p mainexit ]
-"18 pic16f145x_spi.h
-[v _spi `(ui ~T0 @X0 0 ef1`ui ]
-"1407 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic16f1454.h
-[v _OSCSTAT `Vuc ~T0 @X0 0 e@154 ]
-[v F1962 `(v ~T0 @X0 1 tf1`ul ]
-"150 C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic.h
-[v __delay `JF1962 ~T0 @X0 0 e ]
-[p i __delay ]
+"20 pic16f145x_ad747xa.h
+[v _adc_8 `(ui ~T0 @X0 0 ef ]
+"21
+[v _adc_12 `(v ~T0 @X0 0 ef1`*ui ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f1454.h: 49: extern volatile unsigned char INDF0 @ 0x000;
@@ -2202,69 +2211,117 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;main.c: 45: unsigned int source_port[0x02] = {0x13,0x88};
 "47
-[v _config `(v ~T0 @X0 1 ef ]
+[v _cur_data `ui ~T0 @X0 1 e ]
+[i _cur_data
+-> -> 0 `i `ui
+]
+[; ;main.c: 47: unsigned int cur_data = 0x00;
 "48
+[v _vib_data `ui ~T0 @X0 -> 2 `i e ]
+[i _vib_data
+:U ..
+-> -> 0 `i `ui
+-> -> 0 `i `ui
+..
+]
+[; ;main.c: 48: unsigned int vib_data[2] = { 0x00, 0x00 };
+"50
+[v _config `(v ~T0 @X0 1 ef ]
+"51
 {
-[; ;main.c: 47: void config()
-[; ;main.c: 48: {
+[; ;main.c: 50: void config()
+[; ;main.c: 51: {
 [e :U _config ]
 [f ]
-[; ;main.c: 49: port_config();
-"49
+[; ;main.c: 52: port_config();
+"52
 [e ( _port_config ..  ]
-[; ;main.c: 51: spi_config();
-"51
+[; ;main.c: 54: spi_config();
+"54
 [e ( _spi_config ..  ]
-[; ;main.c: 53: ad747_init();
-"53
-[e ( _ad747_init ..  ]
-[; ;main.c: 55: wiz_init();
-"55
-[e ( _wiz_init ..  ]
-[; ;main.c: 56: }
+[; ;main.c: 56: ad747_init();
 "56
+[e ( _ad747_init ..  ]
+[; ;main.c: 58: wiz_init();
+"58
+[e ( _wiz_init ..  ]
+[; ;main.c: 60: OPTION_REG = 0b00000001;
+"60
+[e = _OPTION_REG -> -> 1 `i `uc ]
+[; ;main.c: 61: INTCONbits.TMR0IE = 0x01;
+"61
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 62: INTCONbits.GIE = 0x01;
+"62
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 63: }
+"63
 [e :UE 260 ]
 }
-"58
+"65
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
-"59
+"66
 {
-[; ;main.c: 58: int main(int argc, char** argv)
-[; ;main.c: 59: {
+[; ;main.c: 65: int main(int argc, char** argv)
+[; ;main.c: 66: {
 [e :U _main ]
-"58
+"65
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
-"59
+"66
 [f ]
-[; ;main.c: 60: config();
-"60
+[; ;main.c: 67: config();
+"67
 [e ( _config ..  ]
-[; ;main.c: 62: while (1) {
-"62
+[; ;main.c: 69: while (1) {
+"69
 [e :U 263 ]
 {
-[; ;main.c: 63: spi(OSCSTAT);
-"63
-[e ( _spi (1 -> _OSCSTAT `ui ]
-[; ;main.c: 64: _delay((unsigned long)((10)*(48000000/4000000.0)));
-"64
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 66: _delay((unsigned long)((10)*(48000000/4000000.0)));
-"66
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000000.0 `ul ]
-"67
+[; ;main.c: 70: continue;
+"70
+[e $U 262  ]
+"71
 }
 [e :U 262 ]
-"62
+"69
 [e $U 263  ]
 [e :U 264 ]
-[; ;main.c: 67: }
-[; ;main.c: 69: return (0);
-"69
+[; ;main.c: 71: }
+[; ;main.c: 73: return (0);
+"73
 [e ) -> 0 `i ]
 [e $UE 261  ]
-[; ;main.c: 70: }
-"70
+[; ;main.c: 74: }
+"74
 [e :UE 261 ]
+}
+[v F2193 `(v ~T0 @X0 1 tf ]
+"76
+[v _ISR `IF2193 ~T0 @X0 1 e ]
+"77
+{
+[; ;main.c: 76: void interrupt ISR(void)
+[; ;main.c: 77: {
+[e :U _ISR ]
+[f ]
+[; ;main.c: 78: if (INTCONbits.TMR0IF) {
+"78
+[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 266  ]
+{
+[; ;main.c: 79: INTCONbits.TMR0IF = 0x00;
+"79
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 81: cur_data = adc_8();
+"81
+[e = _cur_data ( _adc_8 ..  ]
+[; ;main.c: 82: adc_12(vib_data);
+"82
+[e ( _adc_12 (1 &U _vib_data ]
+"85
+}
+[e :U 266 ]
+[; ;main.c: 85: }
+[; ;main.c: 86: }
+"86
+[e :UE 265 ]
 }

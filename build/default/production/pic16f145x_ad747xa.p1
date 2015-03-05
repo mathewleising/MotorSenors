@@ -2007,69 +2007,72 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f145x_ad747xa.c: 5: {
 [e :U _ad747_init ]
 [f ]
-[; ;pic16f145x_ad747xa.c: 6: LATCbits.LATC5 = 1;
+[; ;pic16f145x_ad747xa.c: 6: LATCbits.LATC4 = 1;
 "6
-[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
-[; ;pic16f145x_ad747xa.c: 7: }
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 7: LATCbits.LATC5 = 1;
 "7
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 8: }
+"8
 [e :UE 255 ]
 }
-"9
-[v _adc_8 `(ui ~T0 @X0 1 ef ]
 "10
+[v _adc_8 `(ui ~T0 @X0 1 ef ]
+"11
 {
-[; ;pic16f145x_ad747xa.c: 9: unsigned int adc_8()
-[; ;pic16f145x_ad747xa.c: 10: {
+[; ;pic16f145x_ad747xa.c: 10: unsigned int adc_8(void)
+[; ;pic16f145x_ad747xa.c: 11: {
 [e :U _adc_8 ]
 [f ]
-"11
+"12
 [v _data `ui ~T0 @X0 1 a ]
-[; ;pic16f145x_ad747xa.c: 11: unsigned int data = 0x00;
+[; ;pic16f145x_ad747xa.c: 12: unsigned int data = 0x00;
 [e = _data -> -> 0 `i `ui ]
-[; ;pic16f145x_ad747xa.c: 13: LATCbits.LATC5 = 0;
-"13
-[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
-[; ;pic16f145x_ad747xa.c: 16: data = spi(0x00)<<4;
-"16
-[e = _data << ( _spi (1 -> -> 0 `i `ui -> 4 `i ]
-[; ;pic16f145x_ad747xa.c: 17: data = data|(spi(0x00)>>4);
+[; ;pic16f145x_ad747xa.c: 14: LATCbits.LATC4 = 0;
+"14
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 17: data = spi(0x00)<<4;
 "17
+[e = _data << ( _spi (1 -> -> 0 `i `ui -> 4 `i ]
+[; ;pic16f145x_ad747xa.c: 18: data = data|(spi(0x00)>>4);
+"18
 [e = _data | _data >> ( _spi (1 -> -> 0 `i `ui -> 4 `i ]
-[; ;pic16f145x_ad747xa.c: 19: LATCbits.LATC5 = 1;
-"19
-[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
-[; ;pic16f145x_ad747xa.c: 21: return data;
-"21
+[; ;pic16f145x_ad747xa.c: 20: LATCbits.LATC4 = 1;
+"20
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 22: return data;
+"22
 [e ) _data ]
 [e $UE 256  ]
-[; ;pic16f145x_ad747xa.c: 22: }
-"22
+[; ;pic16f145x_ad747xa.c: 23: }
+"23
 [e :UE 256 ]
 }
-"24
+"25
 [v _adc_12 `(v ~T0 @X0 1 ef1`*ui ]
-"25
-{
-[; ;pic16f145x_ad747xa.c: 24: void adc_12(unsigned int * mosi)
-[; ;pic16f145x_ad747xa.c: 25: {
-[e :U _adc_12 ]
-"24
-[v _mosi `*ui ~T0 @X0 1 r1 ]
-"25
-[f ]
-[; ;pic16f145x_ad747xa.c: 26: LATCbits.LATC5 = 0;
 "26
+{
+[; ;pic16f145x_ad747xa.c: 25: void adc_12(unsigned int * mosi)
+[; ;pic16f145x_ad747xa.c: 26: {
+[e :U _adc_12 ]
+"25
+[v _mosi `*ui ~T0 @X0 1 r1 ]
+"26
+[f ]
+[; ;pic16f145x_ad747xa.c: 27: LATCbits.LATC5 = 0;
+"27
 [e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
-[; ;pic16f145x_ad747xa.c: 29: mosi[0] = spi(0x00);
-"29
-[e = *U + _mosi * -> -> 0 `i `x -> -> # *U _mosi `i `x ( _spi (1 -> -> 0 `i `ui ]
-[; ;pic16f145x_ad747xa.c: 30: mosi[1] = spi(0x00);
+[; ;pic16f145x_ad747xa.c: 30: mosi[0] = spi(0x00);
 "30
+[e = *U + _mosi * -> -> 0 `i `x -> -> # *U _mosi `i `x ( _spi (1 -> -> 0 `i `ui ]
+[; ;pic16f145x_ad747xa.c: 31: mosi[1] = spi(0x00);
+"31
 [e = *U + _mosi * -> -> 1 `i `x -> -> # *U _mosi `i `x ( _spi (1 -> -> 0 `i `ui ]
-[; ;pic16f145x_ad747xa.c: 32: LATCbits.LATC5 = 1;
-"32
-[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
-[; ;pic16f145x_ad747xa.c: 33: }
+[; ;pic16f145x_ad747xa.c: 33: LATCbits.LATC5 = 1;
 "33
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[; ;pic16f145x_ad747xa.c: 34: }
+"34
 [e :UE 257 ]
 }

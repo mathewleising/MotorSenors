@@ -44,6 +44,9 @@ unsigned int subnet[REG_SUBNET_MASK_IP_LENGTH] = {0xFF,0x00,0x00,0x00};
 unsigned int source_ip[REG_SOURCE_ADDR_IP_LENGTH] = {0xA9,0x80,0x80,0x81};
 unsigned int source_port[PORT_LENGTH] = {0x13,0x88};
 
+unsigned int cur_data = 0x00;
+unsigned int vib_data[2] = { 0x00, 0x00 };
+
 void config()
 {
     port_config();
@@ -53,21 +56,31 @@ void config()
     ad747_init();
 
     wiz_init();
+
+    OPTION_REG = 0b00000001;
+    INTCONbits.TMR0IE = 0x01;
+    INTCONbits.GIE = 0x01;
 }
 
 int main(int argc, char** argv)
 {
     config();
 
-    unsigned int cur_data = 0x00;
-    unsigned int vib_data[2] = { 0x00, 0x00 };
-
     while (1) {
-        spi(OSCSTAT);
-        __delay_us(10);
-        //config();
-        __delay_us(10);
+        continue;
     }
 
     return (EXIT_SUCCESS);
+}
+
+void interrupt ISR(void)
+{
+    if (INTCONbits.TMR0IF) {
+        INTCONbits.TMR0IF = 0x00;
+
+        cur_data = adc_8();
+        adc_12(vib_data);
+
+        // TODO LOAD DATA TO ETH CONTROLLER
+    }
 }
